@@ -17,6 +17,7 @@ app.post('/hook/alpha', function (req, res) {
     
     var repository = req.body.repository
     var branch = req.body.ref
+    var sender = req.body.sender;
     var app_name = repository.name
 
     if(branch.indexOf('master') > -1 && sender.login === 'fvaz1906'){
