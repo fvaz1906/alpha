@@ -4,12 +4,15 @@
   "description": "app responsible for automating the deployment of github repositories",
   "main": "index.js",
   "scripts": {
-    "start": "node index"
+    "start": "nodemon --delay 8000ms index.js"
   },
   "author": "Felipe Vaz",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1"
+  },
+  "nodemonConfig": {
+    "delay": "6000"
   }
 }

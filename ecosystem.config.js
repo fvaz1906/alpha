@@ -1,7 +1,7 @@
 module.exports = {
     apps : [{
         name: "alpha",
-        script: "nodemon index.js",
+        script: "nodemon --delay 8000ms index.js",
         env: {
             NODE_ENV: "development",
         },
