@@ -1,0 +1,14 @@
+{
+  "name": "alpha",
+  "version": "1.0.0",
+  "description": "app responsible for automating the deployment of github repositories",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "Felipe Vaz",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
