@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 app.listen(3000)
 
 app.get('/', function (req, res) {
-    console.log('boraaaaaa')
+    console.log('boraaaaaa hora do show')
     res.send('hook')
 })
 
