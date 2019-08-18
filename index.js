@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.listen(3000)
 
 app.get('/', function (req, res) {
-    res.send('...')
+    res.send('sai da jaula monstro')
 })
 
 app.post('/hook/alpha', function (req, res) {
