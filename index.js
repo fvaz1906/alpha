@@ -4,7 +4,7 @@ const app = express()
 app.listen(3000)
 
 app.get('/', function (req, res) {
-    console.log('tes')
+    console.log('bora')
     res.send('hook')
 })
 
