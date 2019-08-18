@@ -10,8 +10,8 @@ app.get('/', function (req, res) {
 
 app.post('/hook/alpha', function (req, res) {
     
-    var sender = req.body.sender;
-    var branch = req.body.ref;
+    // var sender = req.body.sender;
+    // var branch = req.body.ref;
 
     console.log( req.body )
 
