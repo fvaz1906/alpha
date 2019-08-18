@@ -5,7 +5,7 @@ app.listen(3000)
 
 app.get('/', function (req, res) {
     console.log('teste')
-    res.send('Hello World!')
+    res.send('adicionado o hook')
 })
 
 app.post('/hook/alpha', function (req, res) {
