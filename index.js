@@ -1,5 +1,9 @@
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.listen(3000)
 
@@ -10,11 +14,7 @@ app.get('/', function (req, res) {
 
 app.post('/hook/alpha', function (req, res) {
     
-    // var sender = req.body.sender;
-    // var branch = req.body.ref;
-
     console.log( req.body )
-    console.log( req.query )
 
     // if(branch.indexOf('master') > -1 && sender.login === 'fvaz1906'){
     //     childProcess.exec('cd /var/www && ./deploy.sh', function(err, stdout, stderr){
