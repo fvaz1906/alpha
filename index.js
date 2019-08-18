@@ -20,7 +20,7 @@ app.post('/hook/alpha', function (req, res) {
     var app_name = repository.name
 
     if(branch.indexOf('master') > -1 && sender.login === 'fvaz1906'){
-        childProcess.exec('cd /var/www/sistemas/' + app_name + ' && git pull && npm update && pm2 restart ' + app_name, function(err, stdout, stderr) {
+        childProcess.exec('cd /var/www/sistemas/' + app_name + ' && git pull && npm update', function(err, stdout, stderr) {
             if (err) {
                 console.error(err)
                 return res.sendStatus(500)
