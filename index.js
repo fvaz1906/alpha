@@ -10,7 +10,7 @@ app.listen(3000)
 
 app.get('/', function (req, res) {
     console.log('boraaaaaa hora do show')
-    res.send('hook')
+    return res.send(200)
 })
 
 app.post('/hook/alpha', function (req, res) {
@@ -24,9 +24,9 @@ app.post('/hook/alpha', function (req, res) {
         childProcess.exec('cd /var/www/sistemas/' + app_name + ' && git pull && pm2 restart ' + app_name, function(err, stdout, stderr) {
             if (err) {
                 console.error(err);
-                return res.send(500);
+                return res.sendStatus(500);
             }
-            res.send(200);
+            return res.sendStatus(200)
         });
     }
 
