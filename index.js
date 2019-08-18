@@ -13,7 +13,8 @@ app.post('/hook/alpha', function (req, res) {
     // var sender = req.body.sender;
     // var branch = req.body.ref;
 
-    console.log( req )
+    console.log( req.body )
+    console.log( req.query )
 
     // if(branch.indexOf('master') > -1 && sender.login === 'fvaz1906'){
     //     childProcess.exec('cd /var/www && ./deploy.sh', function(err, stdout, stderr){
