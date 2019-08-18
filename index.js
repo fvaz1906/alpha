@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const childProcess = require('child_process');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -14,16 +15,18 @@ app.get('/', function (req, res) {
 
 app.post('/hook/alpha', function (req, res) {
     
-    console.log( req.body )
+    var repository = req.body.repository
+    var branch = req.body.ref
+    var app_name = repository.name
 
-    // if(branch.indexOf('master') > -1 && sender.login === 'fvaz1906'){
-    //     childProcess.exec('cd /var/www && ./deploy.sh', function(err, stdout, stderr){
-    //         if (err) {
-    //             console.error(err);
-    //             return res.send(500);
-    //         }
-    //         res.send(200);
-    //     });
-    // }
+    if(branch.indexOf('master') > -1 && sender.login === 'fvaz1906'){
+        childProcess.exec('cd /var/www/sistemas/' + app_name + ' && git pull && pm2 restart ' + app_name, function(err, stdout, stderr) {
+            if (err) {
+                console.error(err);
+                return res.send(500);
+            }
+            res.send(200);
+        });
+    }
 
 })
