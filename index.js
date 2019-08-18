@@ -10,7 +10,7 @@ app.listen(3000)
 
 app.get('/', function (req, res) {
     console.log('boraaaaaa hora do show')
-    res.send('hook deu certo')
+    res.send('hook')
 })
 
 app.post('/hook/alpha', function (req, res) {
