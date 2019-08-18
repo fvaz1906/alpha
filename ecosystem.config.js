@@ -1,7 +1,7 @@
 module.exports = {
     apps : [{
         name: "alpha",
-        script: "node index.js",
+        script: "nodemon index.js",
         env: {
             NODE_ENV: "development",
         },
