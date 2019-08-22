@@ -8,10 +8,6 @@ app.use(bodyParser.json());
 
 app.listen(3001);
 
-app.get('/', function (req, res) {
-    res.send('.... OK ....')
-})
-
 app.post('/hook/alpha', function (req, res) {
     
     var repository = req.body.repository
@@ -20,16 +16,8 @@ app.post('/hook/alpha', function (req, res) {
     var app_name = repository.name
 
     if(branch.indexOf('master') > -1 && sender.login === 'fvaz1906'){
-        //return res.send(200, childProcess.exec('cd /var/www/sistemas/' + app_name + ' && git pull && npm update'))
         childProcess.exec('cd /var/www/sistemas/' + app_name + ' && git pull && npm update');
         return res.status(200).send('OK');
-        // childProcess.exec('cd /var/www/sistemas/' + app_name + ' && git pull && npm update', function(err, stdout, stderr) {
-        //     if (err) {
-        //         console.error(err)
-        //         return res.sendStatus(500)
-        //     }
-        //     return res.sendStatus(200)
-        // })
     }
 
 })
