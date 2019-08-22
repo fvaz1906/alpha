@@ -8,6 +8,10 @@ app.use(bodyParser.json());
 
 app.listen(3001);
 
+app.get('/', function (req, res) {
+    res.redirect('https://www.infovaz.com')
+})
+
 app.post('/hook/alpha', function (req, res) {
     
     var repository = req.body.repository
