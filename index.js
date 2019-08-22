@@ -3,20 +3,10 @@ const app = express()
 const bodyParser = require('body-parser')
 const childProcess = require('child_process');
 
-const fs = require('fs')
-const https = require('https')
-
-const privateKey  = fs.readFileSync('/etc/ssl/private/key.pem', 'utf8');
-const certificate = fs.readFileSync('/etc/ssl/certs/cert.pem', 'utf8');
-
-const credentials = {key: privateKey, cert: certificate};
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const httpsServer = https.createServer(credentials, app);
-
-httpsServer.listen(3001);
+app.listen(3001);
 
 app.get('/', function (req, res) {
     res.send('.... OK ....')

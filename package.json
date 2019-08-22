@@ -4,7 +4,7 @@
   "description": "app responsible for automating the deployment of github repositories",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --delay 8000ms index.js"
+    "start": "node index.js"
   },
   "author": "Felipe Vaz",
   "license": "ISC",
