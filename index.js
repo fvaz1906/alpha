@@ -20,7 +20,8 @@ app.post('/hook/alpha', function (req, res) {
     var app_name = repository.name
 
     if(branch.indexOf('master') > -1 && sender.login === 'fvaz1906'){
-        return res.send(200, childProcess.exec('cd /var/www/sistemas/' + app_name + ' && git pull && npm update'))
+        //return res.send(200, childProcess.exec('cd /var/www/sistemas/' + app_name + ' && git pull && npm update'))
+        return res.status(200).send(childProcess.exec('cd /var/www/sistemas/' + app_name + ' && git pull && npm update'));
         // childProcess.exec('cd /var/www/sistemas/' + app_name + ' && git pull && npm update', function(err, stdout, stderr) {
         //     if (err) {
         //         console.error(err)
