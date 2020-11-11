@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.listen(3001);
 
 app.get('/', function (req, res) {
-    res.redirect('https://www.infovaz.com')
+    res.redirect('https://.........')
 })
 
 app.post('/hook/alpha', function (req, res) {
@@ -19,7 +19,7 @@ app.post('/hook/alpha', function (req, res) {
     var sender = req.body.sender
     var app_name = repository.name
 
-    if(branch.indexOf('master') > -1 && sender.login === 'fvaz1906'){
+    if(branch.indexOf('branch') > -1 && sender.login === 'login'){
         childProcess.exec('cd /var/www/sistemas/' + app_name + ' && git pull && npm update');
         return res.status(200).send('OK');
     }
